@@ -1,0 +1,37 @@
+.container-form-card{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.form-card{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(43, 45, 66);
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.form-card .form-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    background-color: rgb(43, 45, 66);
+    color: #fff;
+    padding: 5px 0px;
+    border-radius: 5px;
+}
+
+.form-card .form-header button{
+    background-color: inherit;
+    color: #fff;
+    border: none;
+    outline: none;
+}
+
+@media (max-width: 540px) {
+    .container-form-card{
+        display: flex;
+        flex-direction: column;
+    }
+}

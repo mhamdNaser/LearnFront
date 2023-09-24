@@ -1,0 +1,282 @@
+.exam-header {
+    height: 120px;
+    background-color: rgb(43, 45, 66);
+    padding: 0px 165px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.exam-header .form-info {
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+}
+
+.form-info div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    font-weight: bolder;
+    margin: 0px 7px;
+}
+
+.form-info .icon {
+    font-size: 80px;
+    margin-right: 30px;
+}
+
+.form-info div:last-of-type {
+    color: rgb(241, 149, 170);
+}
+
+.exam-section {
+    width: 95%;
+    margin: 0 auto;
+}
+
+.exam-section .container-button {
+    width: fit-content;
+    margin: 5px auto;
+    display: grid;
+    grid-template-columns: repeat(10, auto);
+    gap: 5px;
+}
+
+.exam-section .container-button button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: gainsboro;
+    border: 1px solid rgb(241, 149, 170);
+    outline: none;
+}
+
+.exam-content {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.exam-content button {
+    margin-top: 25px;
+    padding: 6px 22px;
+    background-color: rgb(43, 45, 66);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    outline: none;
+    color: #fff;
+}
+
+.question {
+    margin: 0 auto;
+    height: 70vh;
+    overflow-y: scroll;
+    border: 1px solid rgb(43, 45, 66);
+    box-shadow: 0px 0px 8px rgb(43, 45, 66);
+}
+
+.question1 {
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3% ;
+    margin: 0 auto;
+    height: 70vh;
+}
+
+.question h4{
+    background-color: rgb(43, 45, 66);
+    color: #fff;
+    padding: 5px 15px;
+}
+
+.question h4{
+    background-color: rgb(43, 45, 66);
+    color: #fff;
+    padding: 5px 15px;
+}
+
+.scrolling {
+    height: 70vh;
+    overflow-y: scroll;
+    border: 1px solid rgb(43, 45, 66);
+    box-shadow: 0px 0px 8px rgb(43, 45, 66);
+}
+
+.scrolling h4{
+    background-color: rgb(43, 45, 66);
+    color: #fff;
+    padding: 5px 15px;
+}
+
+.material {
+    direction: ltr;
+}
+
+.Flipped {
+    direction: rtl;
+}
+
+/* Styling the scrollbar */
+.scrolling::-webkit-scrollbar {
+    width: 10px;
+    /* Set the width of the scrollbar */
+}
+
+/* Styling the thumb of the scrollbar */
+.scrolling::-webkit-scrollbar-thumb {
+    background-color: rgb(241, 149, 170);
+    /* Color of the thumb */
+    border-radius: 5px;
+    /* Rounded corners for the thumb */
+}
+
+/* Styling the track of the scrollbar */
+.scrolling::-webkit-scrollbar-track {
+    background-color: rgb(43, 45, 66);
+}
+
+/* Styling the scrollbar */
+.question::-webkit-scrollbar {
+    width: 10px;
+    /* Set the width of the scrollbar */
+}
+
+/* Styling the thumb of the scrollbar */
+.question::-webkit-scrollbar-thumb {
+    background-color: rgb(241, 149, 170);
+    /* Color of the thumb */
+    border-radius: 5px;
+    /* Rounded corners for the thumb */
+}
+
+/* Styling the track of the scrollbar */
+.question::-webkit-scrollbar-track {
+    background-color: rgb(43, 45, 66);
+}
+
+.question .content {
+    display: grid;
+    grid-template-columns: 3% 89% 8%;
+    background-color: gainsboro;
+    align-items: start;
+    padding-left: 8px;
+    margin: 0px;
+}
+
+.question .content span {
+    min-width: 20px;
+    padding: 2px 0px;
+}
+
+.question .content span p {
+    display: inline;
+    margin: 0px;
+    padding: 0px;
+}
+
+.question .content span p:first-child {
+    margin: 0px !important;
+    padding: 0px !important;
+    height: auto !important;
+}
+
+.question .content span:nth-last-of-type(2) {
+    flex-grow: 1;
+}
+
+.question .content .points {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    align-content: center;
+    background-color: rgb(43, 45, 66);
+    color: #fff;
+}
+
+.question .content .points span {
+    font-size: 9px;
+}
+
+.selected-question {
+    font-weight: bold;
+    color: rgb(43, 45, 66);
+    background-color: #f195aa !important;
+    /* Change to your desired background color */
+}
+
+.highlighted {
+    background-color: yellow;
+}
+
+.answer-list select {
+    margin: 10px 0px;
+    border: 1px solid gainsboro;
+    width: 240px;
+    color: gray;
+    outline: none;
+    padding: 6px 5px;
+}
+
+.homeexam-container {
+    height: fit-content;
+    line-height: 1.6;
+    font-size: 18px;
+    font-weight: bold;
+    color: dimgray;
+}
+
+.homeexam-container img{
+    width: 50%;
+}
+
+.homeexam-container .homeexam{
+    width: 70%;
+    margin: 0 auto;
+    box-shadow: 0px 0px 8px 4px rgba(43, 45, 66, 0.3);
+}
+.homeexam-container .homeexam-header{
+    text-align: center;
+    width: 70%;
+    margin: 0px auto 48px auto;
+    padding: 35px 0px;
+    box-shadow: 0px 0px 8px 4px rgba(43, 45, 66, 0.3);
+}
+
+.certaf{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.changesection-btn{
+    height: 80%;
+    border-radius: 50%;
+    font-size: 12px;
+    padding: 0px 15px;
+}
+
+.speak-page{
+    display: flex;
+    flex-direction: column;
+}
+
+.speak-page audio{
+    margin: 10px 0px;
+}
+
+.record-page{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0px ;
+}
+
+.buttun-container{
+    position: absolute;
+    bottom: 0px;
+    margin: -5px auto;
+}

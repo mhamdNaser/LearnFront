@@ -1,0 +1,70 @@
+.top {
+    width: 80%;
+    height: 540px;
+    background-image: url('/public/image/Exam.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+    position: relative;
+    box-shadow: 0px 4px 10px 0px rgb(43, 45, 66, 0.8);
+}
+
+.land-header {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(43, 45, 66, 0.8);
+    color: #fff;
+}
+
+.about-ielts{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 6%;
+}
+
+.about-ielts div{
+    width: 20%;
+}
+
+.formula-exam{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-image: url('/public/image/bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    box-shadow: 0px 4px 10px 0px rgb(43, 45, 66, 0.8);
+}
+
+.formula-exam-left{
+    background-color: rgb(255, 255, 255, 0.8);
+    width: 60%;
+    padding: 2%;
+    display: flex;
+    flex-direction: row;
+}
+
+.formula-exam-right{
+    background-color: rgb(255, 255, 255, 0.8);
+    width: 60%;
+    padding: 2%;
+    margin: 3% 0px 0px 38%;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+.type-exam{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 6%; 
+}
+
+.type-exam div{
+    width: 18%;
+}

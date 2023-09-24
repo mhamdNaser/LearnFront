@@ -1,0 +1,32 @@
+.payment{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10% auto;
+    width: 60%;
+}
+
+.payment h2{
+    margin-bottom: 25px;
+    color: rgb(43, 45, 66);
+}
+
+.payment-page{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    height: 30vh;
+    padding: 35px;
+    box-shadow: 0px 0px 8px gainsboro;
+}
+
+.payment-page .payment-content{
+    border-right: 1px solid gainsboro;
+}
+
+.index-exam-body img{
+    width: 100%;
+}
