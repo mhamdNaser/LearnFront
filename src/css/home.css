@@ -1,3 +1,4 @@
+
 .top {
     width: 80%;
     height: 540px;
@@ -55,7 +56,7 @@
     margin: 3% 0px 0px 38%;
     display: flex;
     flex-direction: row;
-    justify-content: end;
+    /* justify-content: end; */
 }
 
 .type-exam{

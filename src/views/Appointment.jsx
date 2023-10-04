@@ -1,79 +1,94 @@
-import React, { useEffect, useState } from "react";
-import "react-big-calendar/lib/css/react-big-calendar.css";
-import { Calendar, dateFnsLocalizer } from "react-big-calendar";
-import format from "date-fns/format";
-import parse from "date-fns/parse";
-import startOfWeek from "date-fns/startOfWeek";
-import getDay from "date-fns/getDay";
+import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { addHours } from "date-fns"; // Import this to handle adding hours
-import addMinutes from "date-fns/addMinutes";
+import { format } from "date-fns"; // Import the format function from date-fns
 import { useStateContext } from "../contexts/ContextsProvider";
-
-const locales = {
-  "en-US": require("date-fns/locale/en-US"),
-};
-
-const localizer = dateFnsLocalizer({
-  format,
-  parse,
-  startOfWeek,
-  getDay,
-  locales,
-});
+import axiosClient from "../axios-client";
 
 export default function Appointment() {
+  const [selectedDate, setSelectedDate] = useState(null);
   const { user } = useStateContext();
-  const [newEvent, setNewEvent] = useState({
-    title: user?.id,
-    start: new Date(),
-    end: addHours(new Date(), 1), // Set default end time to 1 hour ahead
-  });
-  const [allEvent, setAllEvent] = useState([]);
+  const [message, setMessage] = useState("");
 
-  const handleAddEvent = () => {
-    setNewEvent({
-      start: new Date(),
-      end: addMinutes(new Date(), 30), // Reset to default values after adding
-    });
-    setAllEvent([...allEvent, newEvent]);
+  const handleDateChange = (date) => {
+    setSelectedDate(date);
   };
 
-  useEffect(() => {
-    allEvent.forEach((ele) => {
-      console.log(ele.start);
-      console.log(ele.end);
-    });
-  }, [allEvent]);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const formattedDate = selectedDate
+      ? format(selectedDate, "yyyy-MM-dd HH:mm:ss") // Format the date
+      : "";
+
+    const endTime = new Date(selectedDate.getTime() + 30 * 60000);
+
+    const formattedDate1 = endTime
+      ? format(selectedDate, "yyyy-MM-dd HH:mm:ss") // Format the date
+      : "";
+
+    const newEvent = {
+      student_id: user.id,
+      start_time: formattedDate,
+      end_time: formattedDate1,
+    };
+    console.log(newEvent);
+    axiosClient
+      .post("/Appointment", newEvent)
+      .then(() => {
+        setMessage(
+          "Thanks For Appointment In Speaking Exam"
+        );
+      })
+      .catch((error) => {
+        setMessage(
+          "You have already booked or you have booked for an appointment that has already been booked"
+        );
+      });
+  };
 
   return (
-    <div className="d-flex vh-100 justify-content-center">
-      <div>
-        <input
-          type="text"
-          placeholder="Add Title"
-          value={newEvent.title}
-          onChange={(ev) =>
-            setNewEvent({ ...newEvent, title: ev.target.value })
-          }
-        />
-        <DatePicker
-          showTimeSelect
-          placeholderText="Start Date and Time"
-          selected={newEvent.start}
-          onChange={(start) => setNewEvent({ ...newEvent, start })}
-          dateFormat="MM/dd/yyyy h:mm"
-        />
-        <button onClick={handleAddEvent}>Add Event</button>
-        <Calendar
-          localizer={localizer}
-          events={allEvent}
-          startAccessor="start"
-          endAccessor="end"
-          style={{ height: 500 }}
-        />
+    <>
+      <h2 className="text-center mt-5 pt-5">Appointment Booking</h2>
+      <div
+        className="d-flex aling-items-center justify-content-center text-center"
+        // style={{ height: "40vh" }}
+      >
+        <div>
+          <form onSubmit={handleSubmit}>
+            <div className="form-group my-2">
+              <label>Select Date</label>
+              <br />
+              <DatePicker
+                selected={selectedDate}
+                onChange={handleDateChange}
+                minDate={new Date()} // Prevent selecting past dates
+                dateFormat="dd/MM/yyyy"
+                showTimeInput
+                timeInputLabel="Time:"
+                timeFormat="HH:mm"
+              />
+            </div>
+            <button type="submit" className="btn btn-success">
+              Book Appointment
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
+      <div
+        className="d-flex justify-content-center"
+        style={{ position: "relative", height: "40vh" }}
+      >
+        {message && (
+          <div
+            className="alert alert-warning mt-4 text-center"
+            role="alert"
+            style={{ width: "20%", height: "fit-content" }}
+          >
+            <strong>{message}</strong>
+          </div>
+        )}
+      </div>
+    </>
   );
 }

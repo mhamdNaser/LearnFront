@@ -42,7 +42,7 @@ export default function Login() {
   return (
     <div className="login-page">
       {message &&
-        <div className="alert">
+        <div className="Myalert">
           <p>{message}</p>
         </div>
       }
