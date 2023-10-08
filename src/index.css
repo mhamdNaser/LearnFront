@@ -1,3 +1,4 @@
+@import url('./css/responsive.css');
 @import url('./css/paymentpage.css');
 @import url('./css/login.css');
 @import url('./css/animated.css');
@@ -258,62 +259,6 @@ body {
 .toggle-Menu button:hover {
   background-color: #fff;
   color: #2b2d42;
-}
-
-@media (max-width: 1150px) {
-
-  .userinfo .userlist,
-  .userinfo img {
-    display: none;
-  }
-
-  .right-component .dropdown {
-    display: inline-block;
-  }
-
-  .right-component .dropdowncontainer a {
-    display: none;
-  }
-
-  .right-component .dropdowncontainer a:last-of-type,
-  .right-component .dropdowncontainer a:nth-last-of-type(2) {
-    display: block;
-  }
-}
-
-@media (max-width: 950px) {
-  .left-component a {
-    display: none;
-  }
-
-  .right-component .dropdowncontainer a {
-    display: block;
-  }
-
-}
-
-@media (max-width: 540px) {
-  .header-area {
-    padding: 5px 10px;
-  }
-
-  .center-component {
-    display: none;
-  }
-
-}
-
-@media (max-width: 412px) {
-
-  .dropdowncontainer .search-bar {
-    display: flex;
-    width: 60%;
-    margin: 0 auto;
-  }
-
-  hr {
-    display: block;
-  }
 }
 
 .flex-box{
