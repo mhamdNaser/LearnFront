@@ -1,21 +1,28 @@
 import { useState } from 'react';
-import { AiOutlineSearch, AiOutlineMenu } from "react-icons/ai";
+import { AiOutlineMenu } from "react-icons/ai";
 import Userinfo from './Userinformation';
 import { useStateContext } from '../contexts/ContextsProvider';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import axiosClient from '../axios-client';
 
 export default function SiteHeader() {
-
-  const [isSearchVisible, setIsSearchVisible] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const { token } = useStateContext();
-
-  const handleSearch = () => {
-    setIsSearchVisible(!isSearchVisible);
-  };
+  const { user, token, setUser, setToken } = useStateContext();
+  const navigate = useNavigate();
 
   const handleToggleClick = () => {
     setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const handleLogout = async () => {
+    try {
+      await axiosClient.post("/logout");
+      setUser({});
+      setToken(null);
+      navigate("/login");
+    } catch (error) {
+      console.error("Logout error:", error);
+    }
   };
 
   return (
@@ -40,24 +47,25 @@ export default function SiteHeader() {
           <AiOutlineMenu />
         </button>
         {isDropdownOpen && (
-          <div className="mobile-list">
-            {/* Place your dropdown content here */}
+          <div className="mobile-list p-3">
+            <img src="/image/user.png" alt="User" style={{ width: "45px", margin: "0 auto" }} />
+
+            {token && <Link to={'/profile'}>
+              {user.first_name} {user.last_name} <br />
+              {user.email}
+            </Link>}
+            <hr />
             <Link to={'/home'}>Home</Link>
             <Link to={'/about'}>About us</Link>
             {token &&
               <>
                 <Link to={'/contact'}>Contacts</Link>
                 <Link to={'/indexexam'}>Exam Page</Link>
+                <Link to={'/Appointment'}>Appointment Booking</Link>
               </>
             }
-            <button onClick={handleSearch}>
-              <AiOutlineSearch />
-            </button>
-            {isSearchVisible && (
-              <div className="search-bar">
-                <input type="text" placeholder="Search..." />
-              </div>
-            )}
+            <hr />
+            <button onClick={handleLogout} style={{ backgroundColor: "inherit", border: "none" }}>Logout</button>
           </div>
         )}
       </div>
