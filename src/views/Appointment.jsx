@@ -83,7 +83,7 @@ export default function Appointment() {
           <div
             className="alert alert-warning mt-4 text-center"
             role="alert"
-            style={{ width: "20%", height: "fit-content" }}
+            style={{ width: "40%", height: "fit-content" }}
           >
             <strong>{message}</strong>
           </div>

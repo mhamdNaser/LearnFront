@@ -38,13 +38,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="dash-footer">
-        <span>&copy; Copyright 2023 Coding Nasser . All Rights Reserved.</span>
-        <span>
-          Design :{" "}
-          <a className="text-white" target="_blank" rel="nofollow" href="/">
-            Muhammed Nasser Edden
-          </a>
-        </span>
+        <span>&copy; Copyright 2023 Coding <strong style={{ color: "rgb(216, 0, 50)"}}>IELTSCOMPASS</strong>. All Rights Reserved.</span>
       </div>
     </div>
   );
