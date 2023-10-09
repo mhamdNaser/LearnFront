@@ -12,7 +12,6 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-// import faker from 'faker';
 
 ChartJS.register(
   LineElement,
@@ -34,16 +33,16 @@ export default function Profile() {
     labels: !arrayFromJson
       ? [null]
       : arrayFromJson.map((ele) => {
-        return "Form: " + ele.formExam.id + " - " + ele.formExam.type;
-      }),
+          return "Form: " + ele.formExam.id + " - " + ele.formExam.type;
+        }),
     datasets: [
       {
         label: "Student Result",
         data: !arrayFromJson
           ? [null]
           : arrayFromJson.map((ele) => {
-            return ele.result;
-          }),
+              return ele.result;
+            }),
         backgroundColor: "rgb(216, 0, 50, 0.5)",
         borderColor: "rgb(43, 45, 66)",
         pointBorderColor: "rgb(216, 0, 50, 0.5)",
@@ -73,7 +72,7 @@ export default function Profile() {
       getUserData();
       getUserResult();
     }
-  }, []);
+  }, [user.id]);
 
   const getUserData = async () => {
     await axiosClient
@@ -81,11 +80,13 @@ export default function Profile() {
       .then(({ data }) => {
         setUserData(data);
       })
-      .catch(() => { });
+      .catch(() => {
+        console.log("user not found ");
+      });
   };
 
-  const getUserResult = () => {
-    axiosClient
+  const getUserResult = async () => {
+    await axiosClient
       .get(`/userscoreExam/${user.id}`)
       .then((response) => {
         setresultData(response.data.data);
@@ -129,9 +130,7 @@ export default function Profile() {
         </div>
       </div>
       <div className="d-flex my-5 justify-content-center gap-2">
-        { resultdata &&
-        <Bar data={data} options={options}></Bar>
-        }
+        {resultdata && <Bar data={data} options={options}></Bar>}
       </div>
     </div>
   );

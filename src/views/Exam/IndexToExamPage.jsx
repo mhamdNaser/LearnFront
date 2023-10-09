@@ -45,8 +45,8 @@ function IndexToExamPage() {
             </p>
           </div>
         </div>
-        <div className="index-exam-body px-2 py-3 justify-content-center">
-          <div className="card border-0 py-3 px-2">
+        <div className="index-exam-body py-3 justify-content-center">
+          <div className="card border-0 py-3">
             <img className="card-img-top px-2" src="/image/general.png" alt="" />
             <div className="card-body">
               <h5 className="card-title">IELTS General Training</h5>
@@ -63,7 +63,7 @@ function IndexToExamPage() {
               </button>
             </div>
           </div>
-          <div className="card border-0 py-3 px-2">
+          <div className="card border-0 py-3">
             <img className="card-img-top px-2" src="/image/academy.png" alt="" />
             <div className="card-body">
               <h5 className="card-title">IELTS Academic</h5>
