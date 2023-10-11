@@ -254,6 +254,7 @@
 
 .changesection-btn{
     height: 80%;
+    min-height: 100px;
     border-radius: 50%;
     font-size: 12px;
     padding: 0px 15px;
