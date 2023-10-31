@@ -509,15 +509,16 @@
 }
 
 /* ----------------  Footer  ---------------------- */
-.index-exam-page{
+.index-exam-page {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  margin: 30px auto;
+  width: 60%;
 }
 
-.cont-exam-page{
+.cont-exam-page {
   box-shadow: 0px 5px 8px 2px rgba(43, 45, 66, 0.3);
   width: 50%;
 }
@@ -527,33 +528,33 @@
   color: #fff;
 }
 
-.header-alert img{
+.header-alert img {
   width: 100%;
 }
 
-.index-exam-page .index-exam-body{
+.index-exam-page .index-exam-body {
   display: flex;
   flex-direction: row;
   gap: 15px;
 }
 
-.index-exam-page .index-exam-body .card{
+.index-exam-page .index-exam-body .card {
   width: 420px;
   box-shadow: 0px 0px 8px 2px rgba(43, 45, 66, 0.2);
 }
 
-.index-exam-body .card a{
+.index-exam-body .card a {
   background-color: rgb(43, 45, 66);
   color: #fff;
   text-decoration: none;
   padding: 8px 15px;
 }
 
-.index-exam-body .card .card-text{
+.index-exam-body .card .card-text {
   height: 120px;
 }
 
-.exam-page-header{
+.exam-page-header {
   height: 100vh;
 }
 
@@ -592,7 +593,7 @@
 }
 
 .exam-page-center h5,
-.exam-page-right h5{
+.exam-page-right h5 {
   border-radius: 7px 7px 0px 0px;
   background-color: rgb(43, 45, 66);
   color: #fff;
@@ -608,7 +609,7 @@
   width: 75%;
 }
 
-.card-button{
+.card-button {
   background-color: rgb(43, 45, 66);
   color: #fff;
   padding: 5px 12px;
@@ -616,7 +617,7 @@
   border: none;
 }
 
-.card-text{
+.card-text {
   min-height: 100px !important;
   overflow: hidden;
 }
@@ -770,6 +771,25 @@
     width: 85%;
   }
 
+  .homeexam-container img {
+    display: none;
+  }
+
+  .exam-content {
+    display: flex;
+    flex-direction: column;
+    height: 720px;
+}
+
+.exam-header {
+  height: auto;
+  gap: 10px;
+  padding: 0px 10px;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 }
 

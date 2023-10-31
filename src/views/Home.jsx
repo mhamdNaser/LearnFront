@@ -1,6 +1,6 @@
 import React from 'react';
 import { GiHandBag, GiEarthAfricaEurope, GiGraduateCap } from 'react-icons/gi'
-import { FaAssistiveListeningSystems, FaTeamspeak, FaBookReader, FaPen } from 'react-icons/fa'
+import { FaAssistiveListeningSystems, FaTeamspeak, FaBookReader, FaPen } from 'react-icons/fa';
 
 export default function Home() {
 
