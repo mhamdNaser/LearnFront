@@ -31,8 +31,8 @@ function IndexToExamPage() {
   };
 
   return (
-    <div className="index-exam-page my-3 py-3">
-      <div className="cont-exam-page py-3">
+    <div className="index-exam-page my-3">
+      <div className="cont-exam-page p-3">
         <div className="header-alert">
           <img src="/image/logo.png"
             alt="" />
