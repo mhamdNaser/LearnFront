@@ -519,6 +519,7 @@
 
 .cont-exam-page{
   box-shadow: 0px 5px 8px 2px rgba(43, 45, 66, 0.3);
+  width: 50%;
 }
 
 .index-exam-page .header-alert {

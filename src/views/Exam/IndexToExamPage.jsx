@@ -31,8 +31,8 @@ function IndexToExamPage() {
   };
 
   return (
-    <div className="index-exam-page">
-      <div className="cont-exam-page">
+    <div className="index-exam-page my-3 py-3">
+      <div className="cont-exam-page py-3">
         <div className="header-alert">
           <img src="/image/logo.png"
             alt="" />
@@ -45,7 +45,7 @@ function IndexToExamPage() {
             </p>
           </div>
         </div>
-        <div className="index-exam-body py-3 justify-content-center">
+        <div className="index-exam-body justify-content-center">
           <div className="card border-0 py-3">
             <img className="card-img-top px-2" src="/image/general.png" alt="" />
             <div className="card-body">
